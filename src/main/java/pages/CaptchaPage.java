@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class CaptchaPage {
     private WebDriver driver;
-    private By captchaChallenge = By.id("recaptcha-token");
+    private By captchaChallenge = By.cssSelector("#text");
 
     public CaptchaPage(WebDriver driver){
         this.driver = driver;
