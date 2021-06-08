@@ -18,6 +18,8 @@ public class RegisterTests extends BaseTests {
         registerPage.setMobileField("7654321");
         registerPage.setPasswordFieldField("secret1234");
         registerPage.setConfirmPasswordField("blah");
+        // add more step to clear all characters in textfields
+        // add assertion here to verify that the error messages are displayed
         CaptchaPage captchaPage = registerPage.clickRegisterButton();
     }
 }
