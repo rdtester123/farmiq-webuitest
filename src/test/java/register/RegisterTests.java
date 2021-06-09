@@ -7,8 +7,10 @@ import pages.RegisterPage;
 
 public class RegisterTests extends BaseTests {
 
+    // Test case 1
     @Test
     public void testLoginErrors(){
+
         RegisterPage registerPage = homePage.clickRegister();
         registerPage.setTitleField("Mr");
         registerPage.setFirstNameField("First");
@@ -20,6 +22,9 @@ public class RegisterTests extends BaseTests {
         registerPage.setConfirmPasswordField("blah");
         // add more steps to clear all characters in textfields
         // add assertion here to verify that the error messages are displayed
+        registerPage.setMailingTickBox();
+        registerPage.setTermsTickBox();
+
         CaptchaPage captchaPage = registerPage.clickRegisterButton();
     }
 }

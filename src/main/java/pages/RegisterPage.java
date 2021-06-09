@@ -17,10 +17,14 @@ public class RegisterPage {
     private By termsTickBox = By.id("terms");
     private By mailingTickBox = By.id("mailing");
     private By registerButton = By.id("register_submit");
+    private By passConfError = By.cssSelector("passconf-error");
+    
+    String ExpectedText = "Your passwords do not match.";
 
     public RegisterPage(WebDriver driver){
         this.driver = driver;
     }
+
     public void setTitleField(String title){
         driver.findElement(titleField).sendKeys(title);
     }
@@ -42,17 +46,17 @@ public class RegisterPage {
     public void setPasswordFieldField(String password){
         driver.findElement(passwordField).sendKeys(password);
     }
+    public void setConfirmPasswordField(String confirmPassword){ driver.findElement(confirmPasswordField).sendKeys(confirmPassword); }
 
-    public void setConfirmPasswordField(String confirmPassword){
-        driver.findElement(confirmPasswordField).sendKeys(confirmPassword);
+    public boolean showPassConfError() { driver.findElement(passConfError).getText();
+        return true;
     }
 
-    public void setTermsTickBox(String terms){
-        driver.findElement(termsTickBox).sendKeys(terms);
+    public void setTermsTickBox(){
+        driver.findElement(termsTickBox).click();
     }
-
-    public void setMailingTickBox(String mailing){
-        driver.findElement(mailingTickBox).sendKeys(mailing);
+    public void setMailingTickBox(){
+        driver.findElement(mailingTickBox).click();
     }
 
     public CaptchaPage clickRegisterButton(){

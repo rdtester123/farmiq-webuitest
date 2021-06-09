@@ -2,6 +2,7 @@ package base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pages.HomePage;
@@ -18,6 +19,8 @@ public class BaseTests {
         driver.get("https://demo.cubecart.com/cc6/index.php");
 
         homePage = new HomePage(driver);
+
+        Reporter.log("Launching Google Chrome Driver version 91 for this test");
 
         System.out.println(driver.getTitle());
     }
